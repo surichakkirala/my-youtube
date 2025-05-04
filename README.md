@@ -20,3 +20,16 @@ You may also see any lint errors in the console.
     - ButtonsList
     - VideoContainer
       - VideoCard
+
+### Concepts
+
+# Debouncing
+
+- Lets consider example of search
+  - If difference between two key strokes is < 200ms - Decline API call
+  - If difference between two key strokes is > 200ms - Make API call
+
+# Cache
+
+- time complexity to search in array = O(n)
+- time complexity to search in object = O(1)
