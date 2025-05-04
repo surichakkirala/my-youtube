@@ -2,32 +2,24 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../slices/appSlice";
 import { useSearchParams } from "react-router-dom";
-import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
+import VideoPlay from "./VideoPlay";
 
 const WatchPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
+  const videoId = searchParams.get("v");
   useEffect(() => {
     dispatch(closeMenu());
   }, []);
   return (
-    <div className="flex flex-col">
-      <div className="px-5 pt-5">
-        <iframe
-          width="1000"
-          height="500"
-          src={
-            "https://www.youtube.com/embed/" +
-            searchParams.get("v") +
-            "?&autoplay=1&mute=0"
-          }
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+    <div className="md:flex md:flex-wrap md:justify-center md:w-full mt-4">
+      <div className=" md:w-3/5 md:mr-2">
+        <VideoPlay videoId={videoId} />
       </div>
-      <CommentsContainer />
+      <div className="w-1/3 hidden md:block h-[30rem]">
+        <LiveChat />
+      </div>
     </div>
   );
 };
