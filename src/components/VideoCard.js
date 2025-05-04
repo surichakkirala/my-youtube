@@ -17,14 +17,18 @@ const VideoCard = ({ videoInfo }) => {
     }
   };
   return (
-    <div className="p-2 m-2 w-72 overflow-hidden">
-      <img className="rounded-lg" alt="thumbnail" src={thumbnails.medium.url} />
+    <div className="md:p-2 md:m-2 w-screen md:w-72">
+      <img
+        className="rounded-lg w-screen p-1 md:p-0"
+        alt="thumbnail"
+        src={thumbnails.medium.url}
+      />
       <ul>
-        <li className="font-bold">
+        <li className=" p-1 md:p-0 font-bold">
           {title.length > 60 ? title.slice(0, 55) + "..." : title.slice(0, 58)}
         </li>
-        <li>{viewCount()} views</li>
-        <li>{channelTitle}</li>
+        <li className="p-1 md:p-0 ">{viewCount()} views</li>
+        <li className="p-1 md:p-0 ">{channelTitle}</li>
       </ul>
     </div>
   );

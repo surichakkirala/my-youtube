@@ -14,7 +14,7 @@ const buttonList = [
 ];
 const ButtonsList = () => {
   return (
-    <div className="flex">
+    <div className="flex overflow-x-scroll no-scrollbar">
       {buttonList.map((button, index) => (
         <Button key={index} name={button} />
       ))}
