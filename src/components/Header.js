@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../slices/appSlice";
 import {
-  USER_IMG_URL,
   YOUTUBE_LOGO,
   YOUTUBE_SEARCH_SUGGESTIONS_API,
 } from "../utils/constants";
