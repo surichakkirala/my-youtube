@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { GoSearch } from "react-icons/go";
 import { IoSearchOutline } from "react-icons/io5";
@@ -13,15 +13,29 @@ const SearchComponent = ({
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const searchBoxRef = useRef(null);
+  useEffect(() => {
+    const ac = new AbortController();
+    const handleClickOutside = (e) => {
+      if (searchBoxRef.current && !searchBoxRef.current.contains(e.target)) {
+        setIsSearchBarOpen(false);
+      }
+    };
+    window.addEventListener("mousedown", handleClickOutside, ac);
+    return () => {
+      ac.abort();
+    };
+  }, []);
   return (
-    <div>
-      <div className="flex">
+    <div className="my-3 md:my-0">
+      <div className="flex items-center shadow-lg md:shadow-none">
         <BiArrowBack
-          className="md:hidden"
+          className=" ml-1 md:hidden"
           onClick={() => setShowSearch(!showSearch)}
         />
         <input
-          className="w-1/2 border border-gray-600 p-2 px-4 rounded-l-full"
+          ref={searchBoxRef}
+          className="bg-gray-100 outline-blue-300 md:bg-white w-full md:w-1/2 md:border border-gray-300  m-1 md:m-0 p-2 md:px-4 rounded-full  md:rounded-r-none"
           type="text"
           placeholder="Search..."
           onKeyDown={(e) => {
@@ -37,12 +51,12 @@ const SearchComponent = ({
           value={query}
           onFocus={() => setIsSearchBarOpen(true)}
         />
-        <button className="bg-gray-100 border border-gray-500  px-3 py-3 rounded-r-full text-center">
+        <button className=" hidden md:block bg-gray-100 border border-gray-500  px-3 py-3 rounded-r-full text-center">
           <GoSearch />
         </button>
       </div>
       {isSearchBarOpen && suggestions.length > 0 && (
-        <div className="fixed w-4/12 bg-white py-2 px-2 shadow-lg rounded-lg border border-gray-100">
+        <div className="absolute w-screen mr-2  md:w-4/12 bg-white py-2 px-2 shadow-lg rounded-lg border border-gray-100">
           <ul>
             {suggestions.map((suggestion) => (
               <li

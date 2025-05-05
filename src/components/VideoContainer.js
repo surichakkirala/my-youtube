@@ -14,7 +14,7 @@ const VideoContainer = () => {
     setVideos(json.items);
   };
   return (
-    <div className="flex flex-wrap w-screen">
+    <div className="flex flex-wrap w-screen gap-2 md:gap-0 md:w-full">
       {videos.map((video) => (
         <Link key={video.id} to={"/watch?v=" + video.id}>
           <VideoCard key={video.id} videoInfo={video} />

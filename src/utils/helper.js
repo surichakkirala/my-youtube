@@ -189,3 +189,13 @@ export function generateRandomMessage(length) {
   }
   return result;
 }
+
+export const viewCount = (views) => {
+  if (views > 1000000) {
+    return (views / 100000).toFixed(1).replace(/\.0*$/, "") + "M";
+  } else if (views > 1000) {
+    return (views / 1000).toFixed(1).replace(/\.0*$/, "") + "K";
+  } else {
+    return views;
+  }
+};

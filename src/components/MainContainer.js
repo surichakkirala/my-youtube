@@ -4,8 +4,10 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   return (
-    <div>
-      <ButtonsList />
+    <div className=" my-4 flex flex-col">
+      <div className="hidden md:flex">
+        <ButtonsList />
+      </div>
       <VideoContainer />
     </div>
   );
