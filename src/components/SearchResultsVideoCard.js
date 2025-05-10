@@ -4,6 +4,7 @@ import React from "react";
 const SearchResultsVideoCard = ({ videoInfo }) => {
   const { snippet } = videoInfo;
   const { channelTitle, title, thumbnails, publishedAt, description } = snippet;
+
   return (
     <div className="flex flex-col md:flex-row p-1 mb-3 space-y-4 my-3 md:h-48 rounded-lg">
       <img

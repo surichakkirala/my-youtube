@@ -6,7 +6,7 @@ export const YOUTUBE_SEARCH_SUGGESTIONS_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const YOUTUBE_SEARCH_API =
-  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&key=" +
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&key=" +
   process.env.REACT_APP_GOOGLE_API_KEY +
   "&q=";
 
@@ -16,4 +16,4 @@ export const USER_IMG_URL =
 export const YOUTUBE_LOGO =
   "https://upload.wikimedia.org/wikipedia/commons/2/20/YouTube_2024.svg";
 export const LIVE_CHAT_COUNT = 20;
-// https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=YOURKEYWORD&type=video&key=YOURAPIKEY
+export const PAGE_SIZE = 10;
