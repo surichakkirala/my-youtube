@@ -25,7 +25,8 @@ const SearchComponent = ({
     return () => {
       ac.abort();
     };
-  }, []);
+  }, [searchBoxRef]);
+
   return (
     <div className="my-3 md:my-0">
       <div className="flex items-center shadow-lg md:shadow-none">
@@ -56,7 +57,10 @@ const SearchComponent = ({
         </button>
       </div>
       {isSearchBarOpen && suggestions.length > 0 && (
-        <div className="absolute w-screen mr-2  md:w-4/12 bg-white py-2 px-2 shadow-lg rounded-lg border border-gray-100">
+        <div
+          ref={searchBoxRef}
+          className="absolute w-screen mr-2  md:w-4/12 bg-white py-2 px-2 shadow-lg rounded-lg border border-gray-100"
+        >
           <ul>
             {suggestions.map((suggestion) => (
               <li
@@ -69,7 +73,7 @@ const SearchComponent = ({
               >
                 <Link
                   className="flex items-center gap-2"
-                  to={`results/?search_query=${suggestion}`}
+                  to={"results/?search_query=" + suggestion}
                 >
                   <IoSearchOutline />
                   {suggestion}

@@ -1,9 +1,11 @@
 import React from "react";
 import { viewCount } from "../utils/helper";
+import moment from "moment/moment";
+import { RxDotFilled } from "react-icons/rx";
 
 const VideoCard = ({ videoInfo }) => {
   const { snippet, statistics } = videoInfo;
-  const { channelTitle, title, thumbnails } = snippet;
+  const { channelTitle, title, thumbnails, publishedAt } = snippet;
 
   return (
     <div className="md:p-2 md:m-2 md:w-72">
@@ -12,15 +14,16 @@ const VideoCard = ({ videoInfo }) => {
         alt="thumbnail"
         src={thumbnails.medium.url}
       />
-      <ul>
-        <li className=" p-1 md:p-0 font-bold">
+      <div className="font-semibold m-2 space-y-2">
+        <h2>
           {title.length > 60 ? title.slice(0, 55) + "..." : title.slice(0, 58)}
-        </li>
-        <li className="p-1 md:p-0 ">
-          {viewCount(statistics?.viewCount)} views
-        </li>
-        <li className="p-1 md:p-0 ">{channelTitle}</li>
-      </ul>
+        </h2>
+        <p className="text-xs">{channelTitle}</p>
+        <div className="flex items-center text-xs text-gray-600 gap-1">
+          <p>{viewCount(statistics?.viewCount)} views</p> <RxDotFilled />
+          <p>{moment(publishedAt).fromNow()}</p>
+        </div>
+      </div>
     </div>
   );
 };
