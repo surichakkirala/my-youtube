@@ -1,5 +1,5 @@
 import React from "react";
-import { viewCount } from "../utils/helper";
+import { formatCount } from "../utils/helper";
 import moment from "moment/moment";
 import { RxDotFilled } from "react-icons/rx";
 
@@ -20,7 +20,7 @@ const VideoCard = ({ videoInfo }) => {
         </h2>
         <p className="text-xs">{channelTitle}</p>
         <div className="flex items-center text-xs text-gray-600 gap-1">
-          <p>{viewCount(statistics?.viewCount)} views</p> <RxDotFilled />
+          <p>{formatCount(statistics?.viewCount)} views</p> <RxDotFilled />
           <p>{moment(publishedAt).fromNow()}</p>
         </div>
       </div>

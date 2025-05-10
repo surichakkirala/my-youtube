@@ -38,8 +38,8 @@ const SearchResults = () => {
   return (
     <div className="flex flex-col justify-center w-fit">
       {videos.slice(start, end).map((video) => (
-        <Link key={video.id} to={"/watch?v=" + video.id.videoId}>
-          <SearchResultsVideoCard key={video.id} videoInfo={video} />
+        <Link key={video.id.videoId} to={"/watch?v=" + video.id.videoId}>
+          <SearchResultsVideoCard videoInfo={video} />
         </Link>
       ))}
       <Pagination

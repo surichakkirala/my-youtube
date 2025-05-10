@@ -19,6 +19,7 @@ const Pagination = ({
           .keys()
           .map((num) => (
             <button
+              key={num}
               className={`p-2 m-2  cursor-pointer"${
                 num === currentPage ? " bg-blue-900 text-white" : "no-underline"
               }`}

@@ -190,7 +190,7 @@ export function generateRandomMessage(length) {
   return result;
 }
 
-export const viewCount = (views) => {
+export const formatCount = (views) => {
   if (views > 1000000) {
     return (views / 100000).toFixed(1).replace(/\.0*$/, "") + "M";
   } else if (views > 1000) {

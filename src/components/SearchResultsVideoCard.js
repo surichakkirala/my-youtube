@@ -12,7 +12,7 @@ const SearchResultsVideoCard = ({ videoInfo }) => {
         alt="thumbnail"
         src={thumbnails.medium.url}
       />
-      <div className="font-semibold m-2 px-4 space-y-4">
+      <div className="font-semibold m-2 px-4 md:space-y-4 space-y-1">
         <h2>{title}</h2>
         <p className="text-xs">{channelTitle}</p>
         <div className="flex items-center text-xs text-gray-600 gap-1">
