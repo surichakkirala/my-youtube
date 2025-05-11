@@ -1,3 +1,8 @@
+# Techstack used
+  - React
+  - Redux
+  - Tailwind CSS for making UI look beautiful
+  - Youtube API
 ## Available Scripts
 
 In the project directory, you can run:
