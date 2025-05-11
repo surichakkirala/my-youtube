@@ -26,7 +26,9 @@ const SearchComponent = ({
       ac.abort();
     };
   }, [searchBoxRef]);
-
+  const handleSearch = (q) => {
+    navigate(`results/?search_query=${q}`);
+  };
   return (
     <div className="my-3 md:my-0">
       <div className="flex items-center shadow-lg md:shadow-none">
@@ -52,7 +54,10 @@ const SearchComponent = ({
           value={query}
           onFocus={() => setIsSearchBarOpen(true)}
         />
-        <button className=" hidden md:block bg-gray-100 border border-gray-500  px-3 py-3 rounded-r-full text-center">
+        <button
+          className=" hidden md:block bg-gray-100 border border-gray-500  px-3 py-3 rounded-r-full text-center"
+          onClick={() => handleSearch(query)}
+        >
           <GoSearch />
         </button>
       </div>
