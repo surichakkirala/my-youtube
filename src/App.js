@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import SearchResults from "./components/SearchResults";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -29,11 +30,13 @@ function App() {
     },
   ]);
   return (
-    <Provider store={appStore}>
-      <div>
-        <RouterProvider router={appRouter} />
-      </div>
-    </Provider>
+    <ThemeProvider>
+      <Provider store={appStore}>
+        <div className="dark:bg-gray-900 dark:text-white">
+          <RouterProvider router={appRouter} />
+        </div>
+      </Provider>
+    </ThemeProvider>
   );
 }
 

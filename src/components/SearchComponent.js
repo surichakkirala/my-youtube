@@ -30,7 +30,7 @@ const SearchComponent = ({
     navigate(`results/?search_query=${q}`);
   };
   return (
-    <div className="my-3 md:my-0">
+    <div className=" md:my-0">
       <div className="flex items-center shadow-lg md:shadow-none">
         <BiArrowBack
           className=" ml-1 md:hidden"
@@ -38,7 +38,7 @@ const SearchComponent = ({
         />
         <input
           ref={searchBoxRef}
-          className="bg-gray-100 outline-blue-300 md:bg-white w-full md:w-1/2 md:border border-gray-300  m-1 md:m-0 p-2 md:px-4 rounded-full  md:rounded-r-none"
+          className="dark:bg-gray-900 dark:text-white bg-gray-100 outline-blue-300 md:bg-white w-full md:w-1/2 md:border border-gray-300  m-1 md:m-0 p-2 md:px-4 rounded-full  md:rounded-r-none"
           type="text"
           placeholder="Search..."
           onKeyDown={(e) => {
@@ -55,7 +55,7 @@ const SearchComponent = ({
           onFocus={() => setIsSearchBarOpen(true)}
         />
         <button
-          className=" hidden md:block bg-gray-100 border border-gray-500  px-3 py-3 rounded-r-full text-center"
+          className="dark:bg-gray-900 hidden md:block bg-gray-100 border border-gray-500  px-3 py-3 rounded-r-full text-center"
           onClick={() => handleSearch(query)}
         >
           <GoSearch />
@@ -64,12 +64,12 @@ const SearchComponent = ({
       {isSearchBarOpen && suggestions.length > 0 && (
         <div
           ref={searchBoxRef}
-          className="absolute w-screen mr-2  md:w-4/12 bg-white py-2 px-2 shadow-lg rounded-lg border border-gray-100"
+          className=" dark:bg-gray-900 dark:text-white absolute w-screen mr-2  md:w-4/12 bg-white py-2 px-2 shadow-lg rounded-lg border border-gray-100"
         >
           <ul>
             {suggestions.map((suggestion) => (
               <li
-                className="px-2 hover:bg-gray-100"
+                className="px-2 hover:dark:bg-gray-50 hover:dark:text-black hover:bg-gray-100"
                 key={suggestion}
                 onClick={() => {
                   setIsSearchBarOpen(false);

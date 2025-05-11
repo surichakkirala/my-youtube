@@ -21,7 +21,7 @@ const VideoInfoComponent = ({ info }) => {
       <h2 className="font-bold text-xl">{title}</h2>
       <div className="flex flex-row mt-3 items-center justify-between">
         <div className="flex items-center">
-          <div className="bg-gray-200 mt-3 ml-3 rounded-full w-2 p-5 md:p-7 h-2"></div>
+          <div className="dark:bg-gray-900 hover:text-white bg-gray-200 mt-3 ml-3 rounded-full w-2 p-5 md:p-7 h-2"></div>
           <div className="ml-2">
             <h2 className="font-semibold text-sm md:text-base">
               {channelTitle}
@@ -29,20 +29,20 @@ const VideoInfoComponent = ({ info }) => {
           </div>
         </div>
         <div className="flex">
-          <div className="p-3  bg-gray-100 shadow-lg rounded-l-full ">
+          <div className="p-3 dark:bg-gray-900 hover:text-white bg-gray-100 shadow-lg rounded-l-full ">
             <div className="flex items-center">
               <AiOutlineLike className="w-10 h-6" />
               <span className="font-semibold">{formatCount(likeCount)}</span>
             </div>
           </div>
-          <div className="p-3  bg-gray-100 shadow-lg rounded-r-full ">
+          <div className="p-3 dark:bg-gray-900 hover:text-white bg-gray-100 shadow-lg rounded-r-full ">
             <div className="flex items-center">
               <AiOutlineDislike className="w-10 h-6" />
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 rounded-lg p-2 mt-2">
+      <div className="dark:bg-gray-900 hover:text-white bg-gray-100 rounded-lg p-2 mt-2">
         <div className="flex flex-col">
           <p className="font-semibold text-sm md:text-base">
             {formatCount(viewCount)} views &nbsp;{" "}

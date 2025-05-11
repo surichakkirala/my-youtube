@@ -24,7 +24,7 @@ export const USER_IMG_URL =
   "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png";
 
 export const YOUTUBE_LOGO =
-  "https://upload.wikimedia.org/wikipedia/commons/2/20/YouTube_2024.svg";
+  "https://cdn-icons-png.flaticon.com/512/1384/1384060.png";
 
 export const LIVE_CHAT_COUNT = 20;
 export const PAGE_SIZE = 10;

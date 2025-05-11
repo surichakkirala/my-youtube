@@ -10,6 +10,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import SearchComponent from "./SearchComponent";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
+import ThemeToggler from "./ThemeToggler";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -46,7 +47,7 @@ const Header = () => {
   return (
     <>
       {!showSearch && (
-        <div className="flex flex-wrap  justify-between md:grid-flow-col md:grid items-center p-5 m-2 border-b-2 shadow-sm md:shadow-none">
+        <div className="flex flex-wrap  justify-between md:grid-flow-col md:grid items-center p-5 shadow-sm md:shadow-none dark:m-0">
           <div className="flex  md:col-span-3">
             <button onClick={() => toggleMenuHandler()}>
               <GiHamburgerMenu className="hidden md:flex md:w-6 md:h-8 cursor-pointer" />
@@ -55,7 +56,7 @@ const Header = () => {
               <img className="h-8 mx-2" alt="logo" src={YOUTUBE_LOGO} />
             </a>
           </div>
-          <div className="hidden md:block col-span-8 px-10">
+          <div className="hidden md:block col-span-7 px-10">
             <SearchComponent
               showSearch={showSearch}
               setShowSearch={setShowSearch}
@@ -63,11 +64,12 @@ const Header = () => {
               suggestions={suggestions}
             />
           </div>
-          <div className=" flex space-x-2 mr-2 md:mr-4 text-xl md:col-span-1">
+          <div className=" flex items-center gap-3 space-x-2 mr-2 md:mr-4 text-xl md:col-span-1">
             <AiOutlineSearch
               className="md:hidden"
               onClick={() => setShowSearch(!showSearch)}
             />
+            <ThemeToggler />
             <FaUserCircle className=" text-xl md:text-4xl" />
           </div>
         </div>

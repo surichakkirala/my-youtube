@@ -15,9 +15,9 @@ const VideoPlay = ({ videoId }) => {
   };
   if (videoInfo.length === 0) return;
   return (
-    <div>
-      <div className="flex flex-col">
-        <div className="p-1">
+    <>
+      <div className="flex flex-col w-screen">
+        <div className=" p-1">
           <iframe
             className="md:h-[30rem] h-60 w-full md:rounded-lg"
             src={
@@ -34,7 +34,7 @@ const VideoPlay = ({ videoId }) => {
         </div>
         <CommentsContainer videoId={videoId} />
       </div>
-    </div>
+    </>
   );
 };
 
